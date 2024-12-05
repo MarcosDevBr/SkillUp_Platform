@@ -1,3 +1,5 @@
 export interface ICustonHeaderProps {
-    title: string;
+    onClickProfile: () => void;
 }
+
+export type ICustonHeaderViewProps = ICustonHeaderProps

@@ -1,32 +1,58 @@
+import Search from "../Search/CustonSearch";
 import { Container } from "./CustonHeader.style";
+import { SkillUpLogo, ProfileTestImg } from "../../../assets";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faBell } from "@fortawesome/free-solid-svg-icons";
+import { ICustonHeaderViewProps } from "./CustonHeader.model";
 
-export default function CustonHeaderView() {
+export default function CustonHeaderView({ onClickProfile }: ICustonHeaderViewProps ) {
 
     return (
-        <Container>
-            <div className="header-action-container">
+        <Container className="header-action-container">
 
-                <div className="header-logo">
+            <div className="header-logo">
+                <img 
+                    src={SkillUpLogo} 
+                    className="search-suffix-img" 
+                    alt="Icon"
+                />
+            </div>
 
-                </div>
+            <div className="header-search">
+                <Search  />
+            </div>
 
-                <div className="header-search">
-
-                </div>
-
-                <div className="header-profile">
-                    <div className="header-profile-icon">
-
+            <div className="header-profile">
+                <div className="header-profile-icon">
+                    <div className="header-profile-icon-notifications">
+                        <span>
+                            9+
+                        </span>
                     </div>
 
-                    <div className="header-profile-avatar">
+                    <FontAwesomeIcon
+                        icon={faBell} 
+                        size="lg" 
+                        className="search-suffix-close-icon" 
+                        color="white"
+                    />
 
-                    </div>
                 </div>
 
-            </div >
+                <div className="header-profile-avatar" onClick={onClickProfile}>
+                    <img 
+                        src={ProfileTestImg} 
+                        className="search-suffix-img" 
+                        alt="Icon"
+                        style={{ 
+                            width: '100%', 
+                            height: '100%', 
+                            objectFit: 'cover' 
+                          }} 
+                    />
+                </div>
+            </div>
 
-            <div className="grayBar"/>
         </Container>
     )
 }

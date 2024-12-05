@@ -1,15 +1,24 @@
-export enum MODULOS {
-  common = "Common",
-  skillUp = "SkillUp",
-}
+export default class paths {
+  static root = '/';
 
-export const CommonScreen = {
-  signIn: `${MODULOS.common}/Sign-in`,
-}
+  static redirect = '/redirecionar';
 
-export const SkillUpScreen = {
-  home: `${MODULOS.skillUp}/Home`,
-  profile: `${MODULOS.skillUp}/Profile`,
-  videoPlayer: `${MODULOS.skillUp}/VideoPlayer`,
-}
+  static home = {
+      root: '/home',
 
+      catalog: {
+          root: '/home/catalog',
+      },
+
+      profile: {
+        root: '/home/profile',
+      },
+
+      videoPlayer: {
+          root: '/home/videoPlayer',
+          campain: '/home/videoPlayer/:IdVideo?',
+          goTo: (IdVideo?: string | number) => `/home/videoPlayer${IdVideo ? `/${IdVideo}` : ''}`,
+      },
+
+    }
+}

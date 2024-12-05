@@ -11,5 +11,4 @@ export interface ITextInputProps {
     allowClear?: boolean;
 }
 
-export interface ITextInputViewProps extends ITextInputProps {
-}
+export type ITextInputViewProps = ITextInputProps

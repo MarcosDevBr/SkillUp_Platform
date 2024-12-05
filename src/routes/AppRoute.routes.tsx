@@ -1,13 +1,22 @@
+import { Route, Routes } from 'react-router-dom';
+import Catalog from '../pages/skillUp/Catalog/Catalog'; 
+import ViderPlayer from '../pages/skillUp/ViderPlayer/ViderPlayer';
+import SignIn from '../pages/_common/Auth/SignIn';
 import Home from '../pages/skillUp/Home/Home';
 import Profile from '../pages/skillUp/Profile/Profile';
-import ViderPlayer from '../pages/skillUp/ViderPlayer/ViderPlayer';
-import { createBrowserRouter } from 'react-router-dom';
-import { SkillUpScreen } from './AppRoute.model';
-import SignIn from '../pages/_common/Auth/SignIn';
+import paths from './AppRoute.model';
 
-export const router = createBrowserRouter([
-    { path: '/', element: <SignIn /> },
-    { path: SkillUpScreen.home ,element: <Home /> },
-    { path: SkillUpScreen.profile ,element: <Profile /> },
-    { path: SkillUpScreen.videoPlayer ,element: <ViderPlayer /> },
-])
+export function Router() {
+    return (
+      <Routes>
+        <Route path={paths.root} element={<SignIn />} />
+        
+        <Route path={paths.home.root} element={<Home />}>
+          <Route path={paths.home.root} element={<Catalog />} />
+          <Route path={paths.home.profile.root} element={<Profile />} />
+          <Route path={paths.home.videoPlayer.root} element={<ViderPlayer />} />
+        </Route>
+
+      </Routes>
+    )
+  }

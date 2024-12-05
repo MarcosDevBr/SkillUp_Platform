@@ -1,16 +1,25 @@
 import { ThemeProvider } from 'styled-components'
 import { light } from './styles/theme'
-import  { router } from './routes/AppRoute.routes'
+import  { Router } from './routes/AppRoute.routes'
 import GlobalStyle from './styles/global';
-import { RouterProvider } from 'react-router-dom';
+import { BrowserRouter } from 'react-router-dom';
 import { Toaster } from 'sonner'
+import AppGlobalContextProvider from './AppGlobalContextProvider';
 
 function App() {
 
   return (
     <ThemeProvider theme={light}>
         <Toaster richColors />
-        <RouterProvider router={router}/>
+
+        <BrowserRouter>
+
+          <AppGlobalContextProvider>
+            <Router/>
+          </AppGlobalContextProvider>
+
+        </BrowserRouter>
+     
         <GlobalStyle />
     </ThemeProvider>
   )

@@ -3,7 +3,7 @@ import { useState } from 'react';
 import SignInView from './SignIn.view';
 import { useNavigate } from 'react-router-dom';
 import { toast } from 'sonner';
-import { SkillUpScreen } from '../../../routes/AppRoute.model';
+import paths from '../../../routes/AppRoute.model';
 
 export default function SignIn() {
     const [isLoading, setIsLoading] = useState(false)
@@ -39,14 +39,9 @@ export default function SignIn() {
           console.log(email, password)
 
           await new Promise((resolve) => setTimeout(resolve, 1000))
-          toast.success('Login realizado com sucesso!', {
-            action: {
-              label: 'Login',
-              onClick: () => navigate('/sign-in'),
-            },
-          })
+          toast.success('Login realizado com sucesso!')
 
-          navigate(SkillUpScreen.home, { replace: true });    
+          navigate(paths.home.root, { replace: true });    
 
         } catch (error) {
             console.log("Error", error)

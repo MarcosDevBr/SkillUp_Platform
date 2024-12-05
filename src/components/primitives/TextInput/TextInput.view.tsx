@@ -33,7 +33,7 @@ export default function TextInputView({
         className="textInput-input"
         maxLength={maxLength}
         type={isPasswordType && showPassword ? "text" : type}  
-		classNames={{ input: 'textInput-input'}}
+		    classNames={{ input: 'textInput-input'}}
         suffix={showEyeIcon && (
           <FontAwesomeIcon 
             icon={showPassword ? faEyeSlash : faEye} 
