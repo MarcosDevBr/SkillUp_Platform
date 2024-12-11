@@ -27,8 +27,8 @@ const AppGlobalContextProvider: React.FC<IAppGlobalContextProviderProps> = ({ ch
 
     const userAccontObj: IUserAccontObj = {
         userName:"Marcos Augusto",
-        email:"marcosagusto1041@gmail.com",
-        phone:"+5531995269606",
+        email:"marcosagustoops@gmail.com",
+        phone:"+5531995308907",
         address: "Malibu, Califórnia",
         password: 'OPAMINHASENHA'
     }
